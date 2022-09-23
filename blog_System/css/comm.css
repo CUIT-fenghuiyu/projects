@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-image: url(../images/sunset.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.nav {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(50, 50, 50, 0.4);
+    color: rgb(255, 255, 255);
+
+    display: flex;
+    align-items: center;
+}
+
+.nav img {
+    width: 45px;
+    height: 45px;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.nav .spacer {
+    width: 70%;
+}
+
+.nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 0 10px;
+    
+}
+
+.container {
+    width: 1000px;
+    height: calc(100% - 50px);
+    margin: 0 auto;
+
+    /* 实现左右布局, 就得 flex */
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-left {
+    height: 100%;
+    width: 200px;
+
+}
+
+.container-right {
+    height: 100%;
+    width: 795px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+
+    /* overflow 溢出. 描述了溢出之后咋办 */
+    /* auto 就表示, 如果内容多, 自动加滚动条. 如果内容少, 则不变 */
+    overflow: auto;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+/* 用户头像 */
+
+.card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+}
+
+/* 用户名 */
+.card h3 {
+    text-align: center;
+    padding: 5px;
+}
+
+/* github 链接 */
+.card a {
+    /* a 标签是一个行内元素, 转成块级元素 */
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    color: #aaa;
+}
+
+.card .counter {
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
+}
