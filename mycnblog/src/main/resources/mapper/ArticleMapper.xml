@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ArticleMapper">
+    <insert id="save">
+        insert into articleinfo(title,content,uid)values (#{title},#{content},#{uid});
+    </insert>
+
+    <select id="myArtList" resultType="com.example.demo.model.ArticleInfo">
+        select * from articleinfo where uid=#{uid};
+    </select>
+    <select id="selectById" resultType="com.example.demo.model.ArticleInfo">
+        select * from articleinfo where id=#{aid};
+    </select>
+    <select id="selectPartArt" resultType="com.example.demo.model.ArticleInfo">
+        select * from articleinfo limit #{limit} offset #{offset};
+    </select>
+    <select id="getBlogCount" resultType="java.lang.Integer">
+        select count(*) from articleinfo;
+    </select>
+
+    <update id="increaseAccess">
+        update articleinfo set rcount = rcount+1 where id = #{aid};
+    </update>
+    <update id="update">
+        update articleinfo set title=#{title}, content=#{content} where id = #{aid};
+    </update>
+
+    <delete id="blogDel">
+        delete from articleinfo where id=#{aid};
+    </delete>
+
+</mapper>
