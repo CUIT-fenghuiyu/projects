@@ -74,7 +74,7 @@ public class ArticleController {
         if(aid != null && aid>0){
             ArticleInfo articleInfo = articleService.selectById(aid);
             //判断该博客是否属于已登录的用户
-            if(articleInfo!=null && articleInfo.getUid()==SessionUtil.getLoginUser(request).getId()){
+            if(articleInfo!=null && articleInfo.getUid().equals(SessionUtil.getLoginUser(request).getId())){
                 return AjaxResult.success(articleService.blogDel(aid));
             }
         }
